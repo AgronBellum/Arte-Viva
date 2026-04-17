@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte Viva - Gerenciador de Encomendas</title>
+    <title>Arte Viva - Conferência de Encomendas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -99,13 +99,13 @@
             <div class="flex justify-between items-start">
                 <div>
                     <h1 class="text-2xl font-bold text-gray-900">Arte Viva</h1>
-                    <p class="text-sm text-gray-500 mt-1">Gerenciador de Encomendas</p>
+                    <p class="text-sm text-gray-500 mt-1">Conferência de Encomendas</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <span id="syncStatus"
                         class="flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full">
                         <span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span>
-                        Sincronizado (Local)
+                        Carregando...
                     </span>
                 </div>
             </div>
@@ -142,25 +142,6 @@
             </div>
 
             <div class="flex gap-2">
-                <button onclick="app.exportData()"
-                    class="bg-violet-500 hover:bg-violet-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
-                        </path>
-                    </svg>
-                    Exportar JSON
-                </button>
-                <label
-                    class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
-                        </path>
-                    </svg>
-                    Importar JSON
-                    <input type="file" id="importFile" accept=".json" class="hidden" onchange="app.importData(this)">
-                </label>
                 <button onclick="app.generatePDF(false)"
                     class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
                     PDF Pend.
@@ -169,54 +150,6 @@
                     class="bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
                     PDF Comp.
                 </button>
-            </div>
-        </div>
-
-        <!-- Form -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-4">
-            <h2 class="text-sm font-bold text-gray-900 mb-4">Nova Encomenda</h2>
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-3 mb-3">
-                <input type="text" id="numInput" placeholder="Nº"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="nameInput" placeholder="Nome do cliente"
-                    class="md:col-span-2 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="dateInput" placeholder="Entrega (DD/MM)"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <select id="mesInput"
-                    class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
-                    <option value="Janeiro">Janeiro</option>
-                    <option value="Fevereiro">Fevereiro</option>
-                    <option value="Março">Março</option>
-                    <option value="Abril" selected>Abril</option>
-                    <option value="Maio">Maio</option>
-                    <option value="Junho">Junho</option>
-                    <option value="Julho">Julho</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Setembro">Setembro</option>
-                    <option value="Outubro">Outubro</option>
-                    <option value="Novembro">Novembro</option>
-                    <option value="Dezembro">Dezembro</option>
-                </select>
-                <input type="text" id="anoInput" value="2026"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-            </div>
-            <div class="flex gap-3 mb-3">
-                <input type="text" id="itemsInput" placeholder="Itens (separe por vírgula)"
-                    class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <button onclick="app.addOrder()"
-                    class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
-                    + Adicionar
-                </button>
-            </div>
-            <button onclick="app.toggleOptional()"
-                class="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-2">
-                <span id="optionalArrow">▼</span> Mais opções (Link NF, Observações)
-            </button>
-            <div id="optionalFields" class="hidden space-y-3">
-                <input type="url" id="linkInput" placeholder="Link da Nota Fiscal (https://...)"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <input type="text" id="obsInput" placeholder="Observações internas (não aparece no PDF)"
-                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
         </div>
 
@@ -388,7 +321,6 @@
                 this.ordenacaoAtual = "recente";
                 this.editingId = null;
                 this.statusFilter = 'all';
-                this.dataModified = false;
 
                 this.loadData();
                 this.setupEventListeners();
@@ -429,124 +361,30 @@
             async loadData() {
                 const statusEl = document.getElementById('syncStatus');
 
-                // Tenta carregar do localStorage primeiro (persistência do usuário)
-                const saved = localStorage.getItem('arteVivaOrders');
-                if (saved) {
-                    try {
-                        this.orders = JSON.parse(saved);
-                        statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full";
-                        statusEl.innerHTML = `<span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span> Carregado do LocalStorage`;
-                        this.refreshOrdersList();
-                        return;
-                    } catch (e) {
-                        // Se não houver dados no localStorage, tenta carregar do JSON
-                        console.log("Nenhum dado no localStorage, tentando JSON...");
-                    }
-                }
-
-                // Tenta carregar do arquivo JSON (dados iniciais/backup)
+                // Carrega SOMENTE do arquivo JSON na mesma pasta
                 try {
                     const response = await fetch('./encomendas_data.json', { cache: 'no-store' });
                     if (!response.ok) throw new Error('Arquivo não encontrado');
 
                     const jsonData = await response.json();
 
-                    // Se tem dados no JSON e não tem no localStorage, usa o JSON
-                    // Se tem dados nos dois, mescla (prioriza localStorage)
-                    if (!saved || this.dataModified === false) {
+                    if (Array.isArray(jsonData)) {
                         this.orders = jsonData;
-                        this.saveToLocalStorage();
+                        statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full";
+                        statusEl.innerHTML = `<span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span> Dados Carregados`;
+                        this.refreshOrdersList();
+                    } else {
+                        throw new Error('Formato de dados inválido');
                     }
-
-                    statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full";
-                    statusEl.innerHTML = `<span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span> Sincronizado (JSON)`;
-                    this.refreshOrdersList();
 
                 } catch (e) {
                     console.error("Erro ao carregar JSON:", e);
-                    // Se falhar tudo, inicia vazio
                     this.orders = [];
                     this.refreshOrdersList();
 
                     statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-red-600 bg-red-50 px-3 py-1.5 rounded-full";
-                    statusEl.innerHTML = `<span class="w-2 h-2 bg-red-500 rounded-full"></span> Modo Offline (Sem dados)`;
+                    statusEl.innerHTML = `<span class="w-2 h-2 bg-red-500 rounded-full"></span> Erro: encomendas_data.json não encontrado`;
                 }
-            }
-
-            saveToLocalStorage() {
-                // Marca que dados foram modificados pelo usuário
-                this.dataModified = true;
-                localStorage.setItem('arteVivaOrders', JSON.stringify(this.orders));
-                this.updateSyncStatus();
-            }
-
-            updateSyncStatus() {
-                const now = new Date().toLocaleTimeString();
-                const status = this.dataModified ? "Modificações pendentes" : "Sincronizado";
-                const cor = this.dataModified ? "text-amber-600 bg-amber-50" : "text-green-600 bg-green-50";
-
-                document.getElementById('syncStatus').innerHTML = `
-                    <span class="w-2 h-2 bg-current rounded-full status-dot"></span>
-                    ${status} às ${now}
-                `;
-                document.getElementById('syncStatus').className = `flex items-center gap-1.5 text-xs font-medium ${cor} px-3 py-1.5 rounded-full`;
-            }
-
-            toggleOptional() {
-                const fields = document.getElementById('optionalFields');
-                const arrow = document.getElementById('optionalArrow');
-                if (fields.classList.contains('hidden')) {
-                    fields.classList.remove('hidden');
-                    arrow.textContent = '▲';
-                } else {
-                    fields.classList.add('hidden');
-                    arrow.textContent = '▼';
-                }
-            }
-
-            addOrder() {
-                const num = document.getElementById('numInput').value.trim();
-                const name = document.getElementById('nameInput').value.trim();
-                const date = document.getElementById('dateInput').value.trim();
-                const items = document.getElementById('itemsInput').value.trim();
-                const mes = document.getElementById('mesInput').value;
-                const ano = document.getElementById('anoInput').value.trim();
-                const link = document.getElementById('linkInput').value.trim();
-                const obs = document.getElementById('obsInput').value.trim();
-
-                if (!num || !name || !date || !items) {
-                    alert('Preencha todos os campos obrigatórios!');
-                    return;
-                }
-
-                const order = {
-                    id: Date.now(),
-                    num: num.padStart(2, '0'),
-                    name: name.toUpperCase(),
-                    date: date,
-                    items: items.split(',').map(i => i.trim()).filter(i => i),
-                    delivered: false,
-                    mes: mes,
-                    ano: ano,
-                    link_nf: link || null,
-                    observacoes: obs || null
-                };
-
-                this.orders.push(order);
-                this.sortOrders();
-                this.saveToLocalStorage();
-                this.refreshOrdersList();
-
-                // Clear form
-                document.getElementById('numInput').value = '';
-                document.getElementById('nameInput').value = '';
-                document.getElementById('dateInput').value = '';
-                document.getElementById('itemsInput').value = '';
-                document.getElementById('linkInput').value = '';
-                document.getElementById('obsInput').value = '';
-                document.getElementById('numInput').focus();
-
-                alert('Encomenda adicionada com sucesso!');
             }
 
             sortOrders() {
@@ -661,7 +499,6 @@
                 const order = this.orders.find(o => o.id === id);
                 if (order) {
                     order.delivered = !order.delivered;
-                    this.saveToLocalStorage();
                     this.refreshOrdersList();
                 }
             }
@@ -669,7 +506,6 @@
             deleteOrder(id) {
                 if (confirm('Deseja excluir esta encomenda?')) {
                     this.orders = this.orders.filter(o => o.id !== id);
-                    this.saveToLocalStorage();
                     this.refreshOrdersList();
                 }
             }
@@ -710,10 +546,9 @@
                 order.observacoes = document.getElementById('editObs').value.trim() || null;
 
                 this.sortOrders();
-                this.saveToLocalStorage();
                 this.refreshOrdersList();
                 this.closeEditModal();
-                alert('Encomenda atualizada!');
+                alert('Encomenda atualizada! (Apenas visualização - recarregue a página para resetar)');
             }
 
             viewDetails(id) {
@@ -845,46 +680,6 @@
                         </div>
                     `;
                 }).join('');
-            }
-
-            exportData() {
-                const dataStr = JSON.stringify(this.orders, null, 2);
-                const blob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `encomendas_backup_${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }
-
-            importData(input) {
-                const file = input.files[0];
-                if (!file) return;
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    try {
-                        const data = JSON.parse(e.target.result);
-                        if (Array.isArray(data)) {
-                            if (confirm(`Importar ${data.length} encomendas? Isso substituirá os dados atuais.`)) {
-                                this.orders = data;
-                                this.dataModified = true;
-                                this.saveToLocalStorage();
-                                this.refreshOrdersList();
-                                alert('Dados importados com sucesso!');
-                            }
-                        } else {
-                            alert('Arquivo JSON inválido!');
-                        }
-                    } catch (err) {
-                        alert('Erro ao importar arquivo: ' + err.message);
-                    }
-                };
-                reader.readAsText(file);
-                input.value = '';
             }
 
             generatePDF(showDelivered) {

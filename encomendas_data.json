@@ -431,7 +431,7 @@
     "items": [
       "Filtro de Café"
     ],
-    "delivered": false,
+    "delivered": true,
     "mes": "Abril",
     "ano": "2026"
   },

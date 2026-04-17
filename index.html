@@ -12,289 +12,140 @@
         * { font-family: 'Inter', sans-serif; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .card-hover {
-            transition: all 0.2s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .status-dot {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .checkbox-custom {
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border: 2px solid #d1d5db;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .checkbox-custom:checked {
-            background-color: #10b981;
-            border-color: #10b981;
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-        }
-        .modal-overlay {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-        }
+        .glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .status-dot { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .checkbox-custom { appearance: none; width: 18px; height: 18px; border: 2px solid #d1d5db; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+        .checkbox-custom:checked { background-color: #10b981; border-color: #10b981; background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e"); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); }
     </style>
-<base target="_blank">
 </head>
 <body class="bg-gray-50 min-h-screen">
     <div id="app" class="max-w-7xl mx-auto p-4 md:p-6">
-        <!-- Header -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-4">
             <div class="flex justify-between items-start">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-900">Arte Viva</h1>
-                    <p class="text-sm text-gray-500 mt-1">Gerenciador de Encomendas</p>
+                    <h1 class="text-2xl font-bold text-gray-900 text-purple-700">Arte Viva</h1>
+                    <p class="text-sm text-gray-500 mt-1">Gerenciador de Encomendas Cloud</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span id="syncStatus" class="flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full">
-                        <span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span>
-                        Sincronizado (Local)
+                    <button onclick="app.loadDataFromGithub()" class="text-xs text-gray-400 hover:text-gray-600 mr-2">🔄 Atualizar</button>
+                    <span id="syncStatus" class="flex items-center gap-1.5 text-xs font-medium text-amber-600 bg-amber-50 px-3 py-1.5 rounded-full">
+                        <span class="w-2 h-2 bg-amber-500 rounded-full status-dot"></span>
+                        Sincronizando...
                     </span>
                 </div>
             </div>
         </div>
 
-        <!-- Toolbar -->
         <div class="flex flex-col lg:flex-row gap-3 mb-4">
             <div class="flex-1 bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex flex-wrap gap-3 items-center">
                 <div class="flex items-center gap-2">
                     <label class="text-xs font-semibold text-gray-500 uppercase">Mês</label>
-                    <select id="mesFilter" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                    <select id="mesFilter" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg block w-32 p-2">
                         <option value="Todos">Todos</option>
-                        <option value="Janeiro">Janeiro</option>
-                        <option value="Fevereiro">Fevereiro</option>
-                        <option value="Março">Março</option>
-                        <option value="Abril">Abril</option>
-                        <option value="Maio">Maio</option>
-                        <option value="Junho">Junho</option>
-                        <option value="Julho">Julho</option>
-                        <option value="Agosto">Agosto</option>
-                        <option value="Setembro">Setembro</option>
-                        <option value="Outubro">Outubro</option>
-                        <option value="Novembro">Novembro</option>
-                        <option value="Dezembro">Dezembro</option>
+                        <option value="Janeiro">Janeiro</option><option value="Fevereiro">Fevereiro</option><option value="Março">Março</option>
+                        <option value="Abril">Abril</option><option value="Maio">Maio</option><option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option><option value="Agosto">Agosto</option><option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option><option value="Novembro">Novembro</option><option value="Dezembro">Dezembro</option>
                     </select>
                 </div>
                 <div class="flex items-center gap-2">
                     <label class="text-xs font-semibold text-gray-500 uppercase">Ano</label>
-                    <input type="text" id="anoFilter" value="2026" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2">
+                    <input type="text" id="anoFilter" value="2026" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg block w-20 p-2">
                 </div>
             </div>
 
             <div class="flex gap-2">
-                <button onclick="app.exportData()" class="bg-violet-500 hover:bg-violet-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                    Exportar JSON
-                </button>
-                <label class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                    Importar JSON
-                    <input type="file" id="importFile" accept=".json" class="hidden" onchange="app.importData(this)">
-                </label>
-                <button onclick="app.generatePDF(false)" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
-                    PDF Pend.
-                </button>
-                <button onclick="app.generatePDF(true)" class="bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
-                    PDF Comp.
-                </button>
+                <button onclick="app.generatePDF(false)" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg">PDF Pend.</button>
+                <button onclick="app.generatePDF(true)" class="bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg">PDF Comp.</button>
             </div>
         </div>
 
-        <!-- Form -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-4">
             <h2 class="text-sm font-bold text-gray-900 mb-4">Nova Encomenda</h2>
             <div class="grid grid-cols-1 md:grid-cols-6 gap-3 mb-3">
-                <input type="text" id="numInput" placeholder="Nº" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="nameInput" placeholder="Nome do cliente" class="md:col-span-2 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="dateInput" placeholder="Entrega (DD/MM)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <select id="mesInput" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                    <option value="Janeiro">Janeiro</option>
-                    <option value="Fevereiro">Fevereiro</option>
-                    <option value="Março">Março</option>
-                    <option value="Abril" selected>Abril</option>
-                    <option value="Maio">Maio</option>
-                    <option value="Junho">Junho</option>
-                    <option value="Julho">Julho</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Setembro">Setembro</option>
-                    <option value="Outubro">Outubro</option>
-                    <option value="Novembro">Novembro</option>
-                    <option value="Dezembro">Dezembro</option>
+                <input type="text" id="numInput" placeholder="Nº" class="border border-gray-300 text-sm rounded-lg p-2.5">
+                <input type="text" id="nameInput" placeholder="Nome do cliente" class="md:col-span-2 border border-gray-300 text-sm rounded-lg p-2.5">
+                <input type="text" id="dateInput" placeholder="Entrega (DD/MM)" class="border border-gray-300 text-sm rounded-lg p-2.5">
+                <select id="mesInput" class="border border-gray-300 text-sm rounded-lg p-2.5">
+                    <option value="Janeiro">Janeiro</option><option value="Fevereiro">Fevereiro</option><option value="Março">Março</option>
+                    <option value="Abril" selected>Abril</option><option value="Maio">Maio</option><option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option><option value="Agosto">Agosto</option><option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option><option value="Novembro">Novembro</option><option value="Dezembro">Dezembro</option>
                 </select>
-                <input type="text" id="anoInput" value="2026" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <input type="text" id="anoInput" value="2026" class="border border-gray-300 text-sm rounded-lg p-2.5">
             </div>
             <div class="flex gap-3 mb-3">
-                <input type="text" id="itemsInput" placeholder="Itens (separe por vírgula)" class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <button onclick="app.addOrder()" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
-                    + Adicionar
-                </button>
-            </div>
-            <button onclick="app.toggleOptional()" class="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-2">
-                <span id="optionalArrow">▼</span> Mais opções (Link NF, Observações)
-            </button>
-            <div id="optionalFields" class="hidden space-y-3">
-                <input type="url" id="linkInput" placeholder="Link da Nota Fiscal (https://...)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <input type="text" id="obsInput" placeholder="Observações internas (não aparece no PDF)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <input type="text" id="itemsInput" placeholder="Itens (separe por vírgula)" class="flex-1 border border-gray-300 text-sm rounded-lg p-2.5">
+                <button onclick="app.addOrder()" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg">+ Adicionar</button>
             </div>
         </div>
 
-        <!-- Stats -->
         <div class="flex flex-wrap gap-3 mb-4">
             <div class="bg-blue-500 text-white rounded-lg px-5 py-3 min-w-[100px]">
-                <p class="text-xs opacity-90">Total</p>
-                <p id="statTotal" class="text-2xl font-bold">0</p>
+                <p class="text-xs opacity-90">Total</p><p id="statTotal" class="text-2xl font-bold">0</p>
             </div>
             <div class="bg-emerald-500 text-white rounded-lg px-5 py-3 min-w-[100px]">
-                <p class="text-xs opacity-90">Entregues</p>
-                <p id="statDelivered" class="text-2xl font-bold">0</p>
+                <p class="text-xs opacity-90">Entregues</p><p id="statDelivered" class="text-2xl font-bold">0</p>
             </div>
             <div class="bg-amber-500 text-white rounded-lg px-5 py-3 min-w-[100px]">
-                <p class="text-xs opacity-90">Pendentes</p>
-                <p id="statPending" class="text-2xl font-bold">0</p>
+                <p class="text-xs opacity-90">Pendentes</p><p id="statPending" class="text-2xl font-bold">0</p>
             </div>
         </div>
 
-        <!-- Search Bar -->
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-3 mb-4">
             <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-1 flex items-center gap-2">
-                    <span class="text-gray-400">🔍</span>
-                    <input type="text" id="searchInput" placeholder="Buscar por nome..." class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2">
-                    <button onclick="app.clearSearch()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
-                </div>
-                <div class="w-px bg-gray-300 hidden md:block"></div>
-                <div class="flex-1 flex items-center gap-2">
-                    <span class="text-gray-400">📦</span>
-                    <input type="text" id="productSearchInput" placeholder="Buscar por produto..." class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2">
-                    <button onclick="app.clearProductSearch()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
-                </div>
-                <div class="w-px bg-gray-300 hidden md:block"></div>
+                <input type="text" id="searchInput" placeholder="🔍 Buscar por nome..." class="flex-1 border border-gray-300 text-sm rounded-lg p-2">
+                <input type="text" id="productSearchInput" placeholder="📦 Buscar por produto..." class="flex-1 border border-gray-300 text-sm rounded-lg p-2">
                 <div class="flex gap-1">
-                    <button onclick="app.filterByStatus('all')" class="bg-gray-500 hover:bg-gray-600 text-white text-xs px-3 py-2 rounded transition-colors">Todas</button>
-                    <button onclick="app.filterByStatus('delivered')" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs px-3 py-2 rounded transition-colors">Entregues</button>
-                    <button onclick="app.filterByStatus('pending')" class="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-2 rounded transition-colors">Pendentes</button>
+                    <button onclick="app.filterByStatus('all')" class="bg-gray-500 text-white text-xs px-3 py-2 rounded">Todas</button>
+                    <button onclick="app.filterByStatus('delivered')" class="bg-emerald-500 text-white text-xs px-3 py-2 rounded">OK</button>
+                    <button onclick="app.filterByStatus('pending')" class="bg-amber-500 text-white text-xs px-3 py-2 rounded">Pendente</button>
                 </div>
             </div>
         </div>
 
-        <!-- List Header -->
-        <div class="bg-white rounded-t-xl shadow-sm border border-gray-200 border-b-0 p-4 flex justify-between items-center">
-            <h3 id="listTitle" class="text-sm font-bold text-gray-900">Lista de Encomendas (0 total)</h3>
-            <div class="flex items-center gap-2">
-                <span class="text-gray-400 text-lg">⇅</span>
-                <select id="ordenacao" onchange="app.refreshOrdersList()" class="bg-white border border-gray-300 text-gray-700 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1.5">
-                    <option value="recente">Recente → Antiga</option>
-                    <option value="antiga">Antiga → Recente</option>
-                    <option value="az">Alfabética A-Z</option>
-                    <option value="za">Alfabética Z-A</option>
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 id="listTitle" class="text-sm font-bold text-gray-900">Lista de Encomendas</h3>
+                <select id="ordenacao" onchange="app.refreshOrdersList()" class="text-xs border rounded p-1">
+                    <option value="recente">Mais Recentes</option>
+                    <option value="antiga">Mais Antigas</option>
                 </select>
             </div>
-        </div>
-
-        <!-- Orders List -->
-        <div id="ordersList" class="bg-white rounded-b-xl shadow-sm border border-gray-200 max-h-[600px] overflow-y-auto">
-            <!-- Orders will be rendered here -->
+            <div id="ordersList" class="max-h-[600px] overflow-y-auto">
+                </div>
         </div>
     </div>
 
-    <!-- Edit Modal -->
     <div id="editModal" class="fixed inset-0 modal-overlay hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto animate-fade-in">
-            <div class="p-6">
-                <h3 class="text-lg font-bold text-gray-900 mb-4">Editar Encomenda</h3>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Nº Pedido:</label>
-                        <input type="text" id="editNum" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Nome:</label>
-                        <input type="text" id="editName" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Data Entrega:</label>
-                        <input type="text" id="editDate" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Mês:</label>
-                            <select id="editMes" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Ano:</label>
-                            <input type="text" id="editAno" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Itens (separe por vírgula):</label>
-                        <input type="text" id="editItems" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">🔗 Link NF:</label>
-                        <input type="url" id="editLink" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">📝 Observações:</label>
-                        <input type="text" id="editObs" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                    </div>
-                </div>
-                <div class="flex gap-3 mt-6">
-                    <button onclick="app.saveEdit()" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Salvar Alterações</button>
-                    <button onclick="app.closeEditModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Cancelar</button>
-                </div>
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h3 class="text-lg font-bold mb-4">Editar Encomenda</h3>
+            <div class="space-y-3" id="editForm">
+                <input type="text" id="editNum" placeholder="Nº" class="w-full border p-2 rounded">
+                <input type="text" id="editName" placeholder="Nome" class="w-full border p-2 rounded">
+                <input type="text" id="editDate" placeholder="Data" class="w-full border p-2 rounded">
+                <input type="text" id="editItems" placeholder="Itens" class="w-full border p-2 rounded">
             </div>
-        </div>
-    </div>
-
-    <!-- Details Modal -->
-    <div id="detailsModal" class="fixed inset-0 modal-overlay hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto animate-fade-in">
-            <div class="p-6" id="detailsContent">
-                <!-- Content will be rendered here -->
+            <div class="flex gap-3 mt-6">
+                <button onclick="app.saveEdit()" class="flex-1 bg-blue-500 text-white py-2 rounded-lg font-bold">Salvar</button>
+                <button onclick="app.closeEditModal()" class="flex-1 bg-gray-200 py-2 rounded-lg">Cancelar</button>
             </div>
         </div>
     </div>
 
     <script>
-        const MESES = [
-            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-        ];
+        // CONFIGURAÇÕES GITHUB - O APP LÊ E ESCREVE AQUI
+        const GITHUB_TOKEN = "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";
+        const REPO_OWNER = "AgronBellum";
+        const REPO_NAME = "Arte-Viva";
+        const FILE_PATH = "encomendas_data.json";
+        const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
 
         class EncomendasApp {
             constructor() {
@@ -307,615 +158,197 @@
                 this.ordenacaoAtual = "recente";
                 this.editingId = null;
                 this.statusFilter = 'all';
+                this.currentSha = null;
 
-                this.loadData();
+                this.init();
+            }
+
+            async init() {
                 this.setupEventListeners();
-                this.refreshOrdersList();
+                await this.loadDataFromGithub();
+            }
+
+            async loadDataFromGithub() {
+                this.updateStatus("Sincronizando...", "amber");
+                try {
+                    const res = await fetch(API_URL, {
+                        headers: { "Authorization": `token ${GITHUB_TOKEN}`, "Accept": "application/vnd.github.v3+json" }
+                    });
+                    if (res.ok) {
+                        const data = await res.json();
+                        this.currentSha = data.sha;
+                        const decodedContent = decodeURIComponent(escape(atob(data.content)));
+                        this.orders = JSON.parse(decodedContent);
+                        this.updateStatus("Nuvem Atualizada", "green");
+                        this.refreshOrdersList();
+                    }
+                } catch (e) {
+                    this.updateStatus("Erro de Conexão", "red");
+                }
+            }
+
+            async saveDataToGithub() {
+                this.updateStatus("Salvando...", "amber");
+                try {
+                    // Busca SHA atualizado para evitar conflitos
+                    const check = await fetch(API_URL, { headers: { "Authorization": `token ${GITHUB_TOKEN}` } });
+                    const checkData = await check.json();
+                    
+                    const content = btoa(unescape(encodeURIComponent(JSON.stringify(this.orders, null, 2))));
+                    
+                    const res = await fetch(API_URL, {
+                        method: "PUT",
+                        headers: { "Authorization": `token ${GITHUB_TOKEN}`, "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            message: "Update via Web App",
+                            content: content,
+                            sha: checkData.sha
+                        })
+                    });
+
+                    if (res.ok) {
+                        const resData = await res.json();
+                        this.currentSha = resData.content.sha;
+                        this.updateStatus("Nuvem Sincronizada", "green");
+                    }
+                } catch (e) {
+                    this.updateStatus("Erro ao Salvar", "red");
+                }
+            }
+
+            updateStatus(text, color) {
+                const el = document.getElementById('syncStatus');
+                const colors = { green: 'text-green-600 bg-green-50', amber: 'text-amber-600 bg-amber-50', red: 'text-red-600 bg-red-50' };
+                const dot = { green: 'bg-green-500', amber: 'bg-amber-500', red: 'bg-red-500' };
+                el.className = `flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full ${colors[color]}`;
+                el.innerHTML = `<span class="w-2 h-2 ${dot[color]} rounded-full status-dot"></span> ${text}`;
             }
 
             setupEventListeners() {
                 document.getElementById('mesFilter').addEventListener('change', (e) => {
                     this.mesSelecionado = e.target.value;
-                    this.anoAtual = document.getElementById('anoFilter').value;
-                    this.filteredOrders = null;
-                    this.currentSearchTerm = "";
-                    this.currentProductSearch = "";
-                    document.getElementById('searchInput').value = "";
-                    document.getElementById('productSearchInput').value = "";
                     this.refreshOrdersList();
                 });
-
-                document.getElementById('anoFilter').addEventListener('change', (e) => {
-                    this.anoAtual = e.target.value;
-                    this.refreshOrdersList();
-                });
-
                 document.getElementById('searchInput').addEventListener('input', (e) => {
-                    this.debounce(() => this.onSearch(e.target.value), 300);
+                    this.currentSearchTerm = e.target.value.toUpperCase();
+                    this.refreshOrdersList();
                 });
-
                 document.getElementById('productSearchInput').addEventListener('input', (e) => {
-                    this.debounce(() => this.onProductSearch(e.target.value), 300);
+                    this.currentProductSearch = e.target.value.toUpperCase();
+                    this.refreshOrdersList();
                 });
-            }
-
-            debounce(func, wait) {
-                clearTimeout(this.debounceTimer);
-                this.debounceTimer = setTimeout(func, wait);
-            }
-
-            loadData() {
-                const saved = localStorage.getItem('arteVivaOrders');
-                if (saved) {
-                    this.orders = JSON.parse(saved);
-                }
-            }
-
-            saveData() {
-                localStorage.setItem('arteVivaOrders', JSON.stringify(this.orders));
-                this.updateSyncStatus();
-            }
-
-            updateSyncStatus() {
-                const now = new Date().toLocaleTimeString();
-                document.getElementById('syncStatus').innerHTML = `
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                    Salvo localmente às ${now}
-                `;
-            }
-
-            toggleOptional() {
-                const fields = document.getElementById('optionalFields');
-                const arrow = document.getElementById('optionalArrow');
-                if (fields.classList.contains('hidden')) {
-                    fields.classList.remove('hidden');
-                    arrow.textContent = '▲';
-                } else {
-                    fields.classList.add('hidden');
-                    arrow.textContent = '▼';
-                }
             }
 
             addOrder() {
-                const num = document.getElementById('numInput').value.trim();
-                const name = document.getElementById('nameInput').value.trim();
-                const date = document.getElementById('dateInput').value.trim();
-                const items = document.getElementById('itemsInput').value.trim();
-                const mes = document.getElementById('mesInput').value;
-                const ano = document.getElementById('anoInput').value.trim();
-                const link = document.getElementById('linkInput').value.trim();
-                const obs = document.getElementById('obsInput').value.trim();
-
-                if (!num || !name || !date || !items) {
-                    alert('Preencha todos os campos obrigatórios!');
-                    return;
-                }
-
                 const order = {
                     id: Date.now(),
-                    num: num.padStart(2, '0'),
-                    name: name.toUpperCase(),
-                    date: date,
-                    items: items.split(',').map(i => i.trim()).filter(i => i),
+                    num: document.getElementById('numInput').value.padStart(2, '0'),
+                    name: document.getElementById('nameInput').value.toUpperCase(),
+                    date: document.getElementById('dateInput').value,
+                    items: document.getElementById('itemsInput').value.split(',').map(i => i.trim()),
                     delivered: false,
-                    mes: mes,
-                    ano: ano,
-                    link_nf: link || null,
-                    observacoes: obs || null
+                    mes: document.getElementById('mesInput').value,
+                    ano: document.getElementById('anoInput').value
                 };
-
                 this.orders.push(order);
-                this.sortOrders();
-                this.saveData();
+                this.saveDataToGithub();
                 this.refreshOrdersList();
-
-                // Clear form
                 document.getElementById('numInput').value = '';
                 document.getElementById('nameInput').value = '';
-                document.getElementById('dateInput').value = '';
                 document.getElementById('itemsInput').value = '';
-                document.getElementById('linkInput').value = '';
-                document.getElementById('obsInput').value = '';
-                document.getElementById('numInput').focus();
-
-                alert('Encomenda adicionada com sucesso!');
-            }
-
-            sortOrders() {
-                this.orders.sort((a, b) => {
-                    const mesA = MESES.indexOf(a.mes);
-                    const mesB = MESES.indexOf(b.mes);
-                    if (a.ano !== b.ano) return a.ano.localeCompare(b.ano);
-                    if (mesA !== mesB) return mesA - mesB;
-                    return parseInt(a.num) - parseInt(b.num);
-                });
-            }
-
-            getOrdersByMonth() {
-                const anoFiltro = document.getElementById('anoFilter').value;
-                if (this.mesSelecionado === "Todos") {
-                    return this.orders.filter(o => (o.ano || '2026') === anoFiltro);
-                } else {
-                    return this.orders.filter(o => 
-                        o.mes === this.mesSelecionado && (o.ano || '2026') === anoFiltro
-                    );
-                }
-            }
-
-            ordenarPedidos(pedidos) {
-                if (!pedidos) return pedidos;
-                const ordenados = [...pedidos];
-
-                switch(this.ordenacaoAtual) {
-                    case 'recente':
-                        ordenados.sort((a, b) => b.id - a.id);
-                        break;
-                    case 'antiga':
-                        ordenados.sort((a, b) => a.id - b.id);
-                        break;
-                    case 'az':
-                        ordenados.sort((a, b) => a.name.localeCompare(b.name));
-                        break;
-                    case 'za':
-                        ordenados.sort((a, b) => b.name.localeCompare(a.name));
-                        break;
-                }
-                return ordenados;
-            }
-
-            onSearch(term) {
-                this.currentSearchTerm = term.toUpperCase();
-                this.currentProductSearch = "";
-                document.getElementById('productSearchInput').value = "";
-
-                const baseList = this.getOrdersByMonth();
-                if (term) {
-                    this.filteredOrders = baseList.filter(o => o.name.toUpperCase().includes(this.currentSearchTerm));
-                } else {
-                    this.filteredOrders = null;
-                }
-                this.refreshOrdersList();
-            }
-
-            onProductSearch(term) {
-                this.currentProductSearch = term.toUpperCase();
-                this.currentSearchTerm = "";
-                document.getElementById('searchInput').value = "";
-
-                const baseList = this.getOrdersByMonth();
-                if (term) {
-                    this.filteredOrders = baseList.filter(o => 
-                        o.items.some(i => i.toUpperCase().includes(this.currentProductSearch))
-                    );
-                } else {
-                    this.filteredOrders = null;
-                }
-                this.refreshOrdersList();
-            }
-
-            clearSearch() {
-                document.getElementById('searchInput').value = '';
-                this.currentSearchTerm = '';
-                if (!this.currentProductSearch) this.filteredOrders = null;
-                this.refreshOrdersList();
-            }
-
-            clearProductSearch() {
-                document.getElementById('productSearchInput').value = '';
-                this.currentProductSearch = '';
-                if (!this.currentSearchTerm) this.filteredOrders = null;
-                this.refreshOrdersList();
-            }
-
-            filterByStatus(status) {
-                this.statusFilter = status;
-                let baseList = this.getOrdersByMonth();
-
-                if (this.currentSearchTerm) {
-                    baseList = baseList.filter(o => o.name.toUpperCase().includes(this.currentSearchTerm));
-                } else if (this.currentProductSearch) {
-                    baseList = baseList.filter(o => 
-                        o.items.some(i => i.toUpperCase().includes(this.currentProductSearch))
-                    );
-                }
-
-                if (status === 'delivered') {
-                    this.filteredOrders = baseList.filter(o => o.delivered);
-                } else if (status === 'pending') {
-                    this.filteredOrders = baseList.filter(o => !o.delivered);
-                } else {
-                    this.filteredOrders = (this.currentSearchTerm || this.currentProductSearch) ? baseList : null;
-                }
-                this.refreshOrdersList();
             }
 
             toggleDelivered(id) {
                 const order = this.orders.find(o => o.id === id);
-                if (order) {
-                    order.delivered = !order.delivered;
-                    this.saveData();
-                    this.refreshOrdersList();
-                }
+                order.delivered = !order.delivered;
+                this.saveDataToGithub();
+                this.refreshOrdersList();
             }
 
             deleteOrder(id) {
-                if (confirm('Deseja excluir esta encomenda?')) {
+                if(confirm("Excluir?")) {
                     this.orders = this.orders.filter(o => o.id !== id);
-                    this.saveData();
+                    this.saveDataToGithub();
                     this.refreshOrdersList();
                 }
             }
 
             openEditModal(id) {
                 const order = this.orders.find(o => o.id === id);
-                if (!order) return;
-
                 this.editingId = id;
                 document.getElementById('editNum').value = order.num;
                 document.getElementById('editName').value = order.name;
                 document.getElementById('editDate').value = order.date;
-                document.getElementById('editMes').value = order.mes;
-                document.getElementById('editAno').value = order.ano || '2026';
                 document.getElementById('editItems').value = order.items.join(', ');
-                document.getElementById('editLink').value = order.link_nf || '';
-                document.getElementById('editObs').value = order.observacoes || '';
-
                 document.getElementById('editModal').classList.remove('hidden');
-            }
-
-            closeEditModal() {
-                document.getElementById('editModal').classList.add('hidden');
-                this.editingId = null;
             }
 
             saveEdit() {
                 const order = this.orders.find(o => o.id === this.editingId);
-                if (!order) return;
-
-                order.num = document.getElementById('editNum').value.padStart(2, '0');
+                order.num = document.getElementById('editNum').value;
                 order.name = document.getElementById('editName').value.toUpperCase();
                 order.date = document.getElementById('editDate').value;
-                order.mes = document.getElementById('editMes').value;
-                order.ano = document.getElementById('editAno').value;
-                order.items = document.getElementById('editItems').value.split(',').map(i => i.trim()).filter(i => i);
-                order.link_nf = document.getElementById('editLink').value.trim() || null;
-                order.observacoes = document.getElementById('editObs').value.trim() || null;
-
-                this.sortOrders();
-                this.saveData();
-                this.refreshOrdersList();
+                order.items = document.getElementById('editItems').value.split(',').map(i => i.trim());
+                this.saveDataToGithub();
                 this.closeEditModal();
-                alert('Encomenda atualizada!');
+                this.refreshOrdersList();
             }
 
-            viewDetails(id) {
-                const order = this.orders.find(o => o.id === id);
-                if (!order) return;
+            closeEditModal() { document.getElementById('editModal').classList.add('hidden'); }
 
-                const content = document.getElementById('detailsContent');
-                content.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-lg font-bold text-gray-900">📋 ${order.name}</h3>
-                        <button onclick="app.closeDetailsModal()" class="text-gray-400 hover:text-gray-600">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                        </button>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                        <p class="text-sm"><span class="font-semibold">Nº Pedido:</span> ${order.num}</p>
-                        <p class="text-sm"><span class="font-semibold">Data Entrega:</span> ${order.date}</p>
-                        <p class="text-sm"><span class="font-semibold">Período:</span> ${order.mes} ${order.ano || '2026'}</p>
-                        <p class="text-sm mt-2">
-                            <span class="font-semibold">Status:</span> 
-                            <span class="${order.delivered ? 'text-emerald-600' : 'text-amber-600'} font-medium">
-                                ${order.delivered ? '✅ Entregue' : '⏳ Pendente'}
-                            </span>
-                        </p>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">📦 Itens</h4>
-                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                        ${order.items.map(i => `<p class="text-sm py-1">• ${i}</p>`).join('')}
-                    </div>
-                    ${order.link_nf ? `
-                        <h4 class="font-semibold text-gray-900 mb-2">🔗 Nota Fiscal</h4>
-                        <div class="bg-gray-50 rounded-lg p-4 mb-4">
-                            <a href="${order.link_nf}" target="_blank" class="text-blue-500 hover:underline text-sm break-all">${order.link_nf}</a>
-                        </div>
-                    ` : ''}
-                    ${order.observacoes ? `
-                        <h4 class="font-semibold text-gray-900 mb-2">📝 Observações</h4>
-                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                            <p class="text-sm text-amber-800">${order.observacoes}</p>
-                        </div>
-                    ` : ''}
-                    <button onclick="app.closeDetailsModal()" class="w-full mt-4 bg-gray-500 hover:bg-gray-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Fechar</button>
-                `;
-
-                document.getElementById('detailsModal').classList.remove('hidden');
-            }
-
-            closeDetailsModal() {
-                document.getElementById('detailsModal').classList.add('hidden');
-            }
-
-            updateStats() {
-                const ordersMes = this.getOrdersByMonth();
-                const total = ordersMes.length;
-                const delivered = ordersMes.filter(o => o.delivered).length;
-                const pending = total - delivered;
-
-                document.getElementById('statTotal').textContent = total;
-                document.getElementById('statDelivered').textContent = delivered;
-                document.getElementById('statPending').textContent = pending;
-            }
+            filterByStatus(status) { this.statusFilter = status; this.refreshOrdersList(); }
 
             refreshOrdersList() {
-                this.ordenacaoAtual = document.getElementById('ordenacao').value;
-                this.updateStats();
-
-                let ordersToShow = this.filteredOrders !== null ? this.filteredOrders : this.getOrdersByMonth();
-                ordersToShow = this.ordenarPedidos(ordersToShow);
-
                 const container = document.getElementById('ordersList');
+                let filtered = this.orders;
 
-                // Update title
-                const count = ordersToShow.length;
-                let titleText = `Lista de Encomendas (${count} `;
-                if (this.currentSearchTerm || this.currentProductSearch) {
-                    titleText += 'resultados)';
-                } else {
-                    titleText += 'total)';
-                }
-                document.getElementById('listTitle').textContent = titleText;
+                if (this.mesSelecionado !== "Todos") filtered = filtered.filter(o => o.mes === this.mesSelecionado);
+                if (this.currentSearchTerm) filtered = filtered.filter(o => o.name.includes(this.currentSearchTerm));
+                if (this.currentProductSearch) filtered = filtered.filter(o => o.items.some(i => i.toUpperCase().includes(this.currentProductSearch)));
+                if (this.statusFilter === 'delivered') filtered = filtered.filter(o => o.delivered);
+                if (this.statusFilter === 'pending') filtered = filtered.filter(o => !o.delivered);
 
-                if (ordersToShow.length === 0) {
-                    container.innerHTML = `
-                        <div class="p-12 text-center text-gray-500">
-                            <p class="text-lg">Nenhuma encomenda encontrada</p>
-                            ${this.mesSelecionado !== 'Todos' ? `<p class="text-sm mt-1">em ${this.mesSelecionado} ${this.anoAtual}</p>` : ''}
-                            ${this.currentSearchTerm ? `<p class="text-sm mt-1">Filtro: '${this.currentSearchTerm}'</p>` : ''}
-                            ${this.currentProductSearch ? `<p class="text-sm mt-1">Produto: '${this.currentProductSearch}'</p>` : ''}
-                        </div>
-                    `;
-                    return;
-                }
+                // Stats
+                document.getElementById('statTotal').textContent = filtered.length;
+                document.getElementById('statDelivered').textContent = filtered.filter(o => o.delivered).length;
+                document.getElementById('statPending').textContent = filtered.filter(o => !o.delivered).length;
 
-                container.innerHTML = ordersToShow.map(order => {
-                    const isDelivered = order.delivered;
-                    const itemsText = order.items.slice(0, 3).join(' • ');
-                    const hasMoreItems = order.items.length > 3;
-                    const nameHighlighted = this.currentSearchTerm && order.name.toUpperCase().includes(this.currentSearchTerm);
-                    const itemHighlighted = this.currentProductSearch && order.items.some(i => i.toUpperCase().includes(this.currentProductSearch));
-
-                    return `
-                        <div class="card-hover border-b border-gray-100 last:border-b-0 p-4 ${isDelivered ? 'bg-emerald-50/50' : 'bg-white'}">
-                            <div class="flex items-start gap-3">
-                                <input type="checkbox" ${isDelivered ? 'checked' : ''} 
-                                    onchange="app.toggleDelivered(${order.id})"
-                                    class="checkbox-custom mt-1">
-
-                                <div class="flex-1 min-w-0">
-                                    <div class="flex items-start gap-2 mb-1">
-                                        <span class="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded">#${order.num}</span>
-                                        <h4 class="text-sm font-bold ${nameHighlighted ? 'text-blue-600' : 'text-gray-900'} truncate cursor-pointer hover:text-blue-600" onclick="app.viewDetails(${order.id})">
-                                            ${order.name}${order.observacoes ? ' <span class="text-amber-500">*</span>' : ''}
-                                        </h4>
-                                        <span class="bg-red-100 text-red-600 text-xs font-medium px-2 py-0.5 rounded whitespace-nowrap">até ${order.date}</span>
-                                    </div>
-                                    <p class="text-xs ${itemHighlighted ? 'text-emerald-600 font-medium' : 'text-gray-500'} truncate">
-                                        ${itemsText}${hasMoreItems ? ` (+${order.items.length - 3})` : ''}
-                                    </p>
-                                    ${this.mesSelecionado === 'Todos' || this.filteredOrders !== null ? 
-                                        `<p class="text-xs text-gray-400 mt-1">${order.mes} ${order.ano || '2026'}</p>` : ''}
-                                </div>
-
-                                <div class="flex flex-col gap-1">
-                                    <button onclick="app.viewDetails(${order.id})" class="bg-sky-500 hover:bg-sky-600 text-white text-xs w-7 h-7 rounded flex items-center justify-center transition-colors" title="Ver">👁</button>
-                                    <button onclick="app.openEditModal(${order.id})" class="bg-amber-500 hover:bg-amber-600 text-white text-xs w-7 h-7 rounded flex items-center justify-center transition-colors" title="Editar">✎</button>
-                                    <button onclick="app.deleteOrder(${order.id})" class="bg-red-500 hover:bg-red-600 text-white text-xs w-7 h-7 rounded flex items-center justify-center transition-colors" title="Excluir">✕</button>
-                                </div>
+                container.innerHTML = filtered.map(o => `
+                    <div class="p-4 border-b border-gray-100 flex items-center justify-between card-hover ${o.delivered ? 'bg-emerald-50' : 'bg-white'}">
+                        <div class="flex items-center gap-4">
+                            <input type="checkbox" ${o.delivered ? 'checked' : ''} onchange="app.toggleDelivered(${o.id})" class="checkbox-custom">
+                            <div>
+                                <p class="text-sm font-bold text-gray-900"><span class="text-purple-600">#${o.num}</span> ${o.name}</p>
+                                <p class="text-xs text-gray-500">${o.items.join(' • ')}</p>
+                                <p class="text-xs font-bold text-red-500 mt-1 uppercase">Até ${o.date}</p>
                             </div>
                         </div>
-                    `;
-                }).join('');
+                        <div class="flex gap-2">
+                            <button onclick="app.openEditModal(${o.id})" class="text-gray-400 hover:text-amber-500 text-lg">✎</button>
+                            <button onclick="app.deleteOrder(${o.id})" class="text-gray-400 hover:text-red-500 text-lg">✕</button>
+                        </div>
+                    </div>
+                `).join('');
             }
 
-            exportData() {
-                const dataStr = JSON.stringify(this.orders, null, 2);
-                const blob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `encomendas_backup_${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }
-
-            importData(input) {
-                const file = input.files[0];
-                if (!file) return;
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    try {
-                        const data = JSON.parse(e.target.result);
-                        if (Array.isArray(data)) {
-                            if (confirm(`Importar ${data.length} encomendas? Isso substituirá os dados atuais.`)) {
-                                this.orders = data;
-                                this.saveData();
-                                this.refreshOrdersList();
-                                alert('Dados importados com sucesso!');
-                            }
-                        } else {
-                            alert('Arquivo JSON inválido!');
-                        }
-                    } catch (err) {
-                        alert('Erro ao importar arquivo: ' + err.message);
-                    }
-                };
-                reader.readAsText(file);
-                input.value = '';
-            }
-
-            generatePDF(showDelivered) {
+            generatePDF(all) {
                 const { jsPDF } = window.jspdf;
                 const doc = new jsPDF();
-
-                let displayOrders = this.filteredOrders !== null ? this.filteredOrders : this.getOrdersByMonth();
-                if (!showDelivered) {
-                    displayOrders = displayOrders.filter(o => !o.delivered);
-                }
-
-                if (displayOrders.length === 0) {
-                    alert('Não há encomendas para gerar PDF!');
-                    return;
-                }
-
-                const mesPDF = this.mesSelecionado === 'Todos' ? 'TODOS_MESES' : this.mesSelecionado;
-                const anoPDF = document.getElementById('anoFilter').value;
-
-                // Header
-                doc.setFillColor(59, 130, 246);
-                doc.rect(0, 0, 210, 25, 'F');
-                doc.setTextColor(255, 255, 255);
-                doc.setFontSize(16);
-                doc.setFont('helvetica', 'bold');
-                const titulo = this.mesSelecionado === 'Todos' ? 
-                    `ENCOMENDAS ${anoPDF}` : 
-                    `ENCOMENDAS - ${this.mesSelecionado.toUpperCase()} ${anoPDF}`;
-                doc.text(titulo, 105, 15, { align: 'center' });
-
-                doc.setFontSize(8);
-                if (this.currentSearchTerm) {
-                    doc.text(`Filtro: ${this.currentSearchTerm} | ${displayOrders.length} encomendas`, 105, 22, { align: 'center' });
-                } else if (this.currentProductSearch) {
-                    doc.text(`Produto: ${this.currentProductSearch} | ${displayOrders.length} encomendas`, 105, 22, { align: 'center' });
-                }
-
-                // Cards grid
-                let y = 35;
-                let x = 10;
-                const cardWidth = 60;
-                const cardHeight = 35;
-                const gap = 5;
-                let count = 0;
-
-                displayOrders.forEach((order, idx) => {
-                    if (count > 0 && count % 9 === 0) {
-                        doc.addPage();
-                        y = 20;
-                        count = 0;
-                    }
-
-                    const row = Math.floor(count / 3);
-                    const col = count % 3;
-                    const cardX = 10 + col * (cardWidth + gap);
-                    const cardY = y + row * (cardHeight + gap);
-
-                    // Card background
-                    doc.setFillColor(255, 255, 255);
-                    doc.setDrawColor(229, 231, 235);
-                    doc.roundedRect(cardX, cardY, cardWidth, cardHeight, 2, 2, 'FD');
-
-                    // Status bar
-                    const statusColor = order.delivered ? [16, 185, 129] : [245, 158, 11];
-                    doc.setFillColor(...statusColor);
-                    doc.rect(cardX, cardY, cardWidth, 3, 'F');
-
-                    // Number badge
-                    doc.setFillColor(59, 130, 246);
-                    doc.circle(cardX + 5, cardY + 10, 3, 'F');
-                    doc.setTextColor(255, 255, 255);
-                    doc.setFontSize(6);
-                    doc.text(order.num, cardX + 5, cardY + 11, { align: 'center' });
-
-                    // Name
-                    doc.setTextColor(31, 41, 55);
+                let list = all ? this.orders : this.orders.filter(o => !o.delivered);
+                doc.setFontSize(16); doc.text("ARTE VIVA - RELATÓRIO", 10, 15);
+                let y = 30;
+                list.forEach(o => {
+                    doc.setFontSize(10);
+                    doc.text(`${o.num} - ${o.name} (Até ${o.date})`, 10, y);
                     doc.setFontSize(8);
-                    doc.setFont('helvetica', 'bold');
-                    let name = order.name;
-                    if (order.observacoes) name += ' *';
-                    if (name.length > 20) name = name.substring(0, 18) + '...';
-                    doc.text(name, cardX + 12, cardY + 11);
-
-                    // Date
-                    doc.setTextColor(239, 68, 68);
-                    doc.setFontSize(6);
-                    doc.text(`ATÉ ${order.date}`, cardX + cardWidth - 2, cardY + 11, { align: 'right' });
-
-                    // Line
-                    doc.setDrawColor(243, 244, 246);
-                    doc.line(cardX + 2, cardY + 16, cardX + cardWidth - 2, cardY + 16);
-
-                    // Items
-                    doc.setTextColor(75, 85, 99);
-                    doc.setFont('helvetica', 'normal');
-                    let itemY = cardY + 21;
-                    order.items.slice(0, 2).forEach((item, i) => {
-                        let text = item;
-                        if (text.length > 25) text = text.substring(0, 23) + '...';
-
-                        // Checkbox
-                        doc.setDrawColor(156, 163, 175);
-                        doc.rect(cardX + 3, itemY - 3, 3, 3);
-                        if (order.delivered && showDelivered) {
-                            doc.line(cardX + 3, itemY - 3, cardX + 6, itemY);
-                            doc.line(cardX + 3, itemY, cardX + 6, itemY - 3);
-                        }
-
-                        doc.text(text, cardX + 8, itemY);
-                        itemY += 5;
-                    });
-
-                    if (order.items.length > 2) {
-                        doc.setTextColor(156, 163, 175);
-                        doc.setFont('helvetica', 'italic');
-                        doc.text(`+ ${order.items.length - 2} itens`, cardX + 3, itemY);
-                    }
-
-                    // Delivered badge
-                    if (order.delivered) {
-                        doc.setFillColor(220, 252, 231);
-                        doc.roundedRect(cardX + 3, cardY + cardHeight - 10, 15, 6, 3, 3, 'F');
-                        doc.setTextColor(22, 101, 52);
-                        doc.setFont('helvetica', 'bold');
-                        doc.setFontSize(6);
-                        doc.text('✓ OK', cardX + 10, cardY + cardHeight - 6, { align: 'center' });
-                    }
-
-                    count++;
+                    doc.text(`Itens: ${o.items.join(', ')}`, 10, y + 5);
+                    y += 15;
                 });
-
-                // Footer
-                const pageCount = doc.getNumberOfPages();
-                for (let i = 1; i <= pageCount; i++) {
-                    doc.setPage(i);
-                    doc.setTextColor(107, 114, 128);
-                    doc.setFontSize(8);
-                    doc.setFont('helvetica', 'normal');
-                    doc.text(`Total: ${displayOrders.length} | Arte Viva | ${new Date().toLocaleDateString('pt-BR')}`, 105, 290, { align: 'center' });
-                }
-
-                if (displayOrders.some(o => o.observacoes)) {
-                    doc.setFontSize(7);
-                    doc.text('* = Possui observações internas (consultar sistema)', 105, 285, { align: 'center' });
-                }
-
-                doc.save(`encomendas_${mesPDF}_${anoPDF}_${showDelivered ? 'completo' : 'pendentes'}.pdf`);
+                doc.save("encomendas.pdf");
             }
         }
 
-        // Initialize app
         const app = new EncomendasApp();
-
-        // Close modals on outside click
-        document.getElementById('editModal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) app.closeEditModal();
-        });
-        document.getElementById('detailsModal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) app.closeDetailsModal();
-        });
     </script>
 </body>
 </html>

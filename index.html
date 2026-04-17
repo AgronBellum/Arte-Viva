@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +10,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <style>
-        * { font-family: 'Inter', sans-serif; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .glass-effect {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
         }
+
         .card-hover {
             transition: all 0.2s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
+
         .animate-fade-in {
             animation: fadeIn 0.3s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .status-dot {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
+
         .checkbox-custom {
             appearance: none;
             width: 18px;
@@ -46,17 +78,20 @@
             cursor: pointer;
             transition: all 0.2s;
         }
+
         .checkbox-custom:checked {
             background-color: #10b981;
             border-color: #10b981;
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
         }
+
         .modal-overlay {
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(4px);
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
     <div id="app" class="max-w-7xl mx-auto p-4 md:p-6">
         <!-- Header -->
@@ -67,7 +102,8 @@
                     <p class="text-sm text-gray-500 mt-1">Gerenciador de Encomendas</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span id="syncStatus" class="flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full">
+                    <span id="syncStatus"
+                        class="flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full">
                         <span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span>
                         Sincronizado (Local)
                     </span>
@@ -77,10 +113,12 @@
 
         <!-- Toolbar -->
         <div class="flex flex-col lg:flex-row gap-3 mb-4">
-            <div class="flex-1 bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex flex-wrap gap-3 items-center">
+            <div
+                class="flex-1 bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex flex-wrap gap-3 items-center">
                 <div class="flex items-center gap-2">
                     <label class="text-xs font-semibold text-gray-500 uppercase">Mês</label>
-                    <select id="mesFilter" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
+                    <select id="mesFilter"
+                        class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2">
                         <option value="Todos">Todos</option>
                         <option value="Janeiro">Janeiro</option>
                         <option value="Fevereiro">Fevereiro</option>
@@ -98,24 +136,37 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <label class="text-xs font-semibold text-gray-500 uppercase">Ano</label>
-                    <input type="text" id="anoFilter" value="2026" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2">
+                    <input type="text" id="anoFilter" value="2026"
+                        class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-20 p-2">
                 </div>
             </div>
 
             <div class="flex gap-2">
-                <button onclick="app.exportData()" class="bg-violet-500 hover:bg-violet-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <button onclick="app.exportData()"
+                    class="bg-violet-500 hover:bg-violet-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
                     Exportar JSON
                 </button>
-                <label class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <label
+                    class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
                     Importar JSON
                     <input type="file" id="importFile" accept=".json" class="hidden" onchange="app.importData(this)">
                 </label>
-                <button onclick="app.generatePDF(false)" class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
+                <button onclick="app.generatePDF(false)"
+                    class="bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
                     PDF Pend.
                 </button>
-                <button onclick="app.generatePDF(true)" class="bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
+                <button onclick="app.generatePDF(true)"
+                    class="bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
                     PDF Comp.
                 </button>
             </div>
@@ -125,10 +176,14 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-4">
             <h2 class="text-sm font-bold text-gray-900 mb-4">Nova Encomenda</h2>
             <div class="grid grid-cols-1 md:grid-cols-6 gap-3 mb-3">
-                <input type="text" id="numInput" placeholder="Nº" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="nameInput" placeholder="Nome do cliente" class="md:col-span-2 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <input type="text" id="dateInput" placeholder="Entrega (DD/MM)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <select id="mesInput" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
+                <input type="text" id="numInput" placeholder="Nº"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <input type="text" id="nameInput" placeholder="Nome do cliente"
+                    class="md:col-span-2 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <input type="text" id="dateInput" placeholder="Entrega (DD/MM)"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <select id="mesInput"
+                    class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
                     <option value="Janeiro">Janeiro</option>
                     <option value="Fevereiro">Fevereiro</option>
                     <option value="Março">Março</option>
@@ -142,20 +197,26 @@
                     <option value="Novembro">Novembro</option>
                     <option value="Dezembro">Dezembro</option>
                 </select>
-                <input type="text" id="anoInput" value="2026" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <input type="text" id="anoInput" value="2026"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
             </div>
             <div class="flex gap-3 mb-3">
-                <input type="text" id="itemsInput" placeholder="Itens (separe por vírgula)" class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                <button onclick="app.addOrder()" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+                <input type="text" id="itemsInput" placeholder="Itens (separe por vírgula)"
+                    class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                <button onclick="app.addOrder()"
+                    class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
                     + Adicionar
                 </button>
             </div>
-            <button onclick="app.toggleOptional()" class="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-2">
+            <button onclick="app.toggleOptional()"
+                class="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1 mb-2">
                 <span id="optionalArrow">▼</span> Mais opções (Link NF, Observações)
             </button>
             <div id="optionalFields" class="hidden space-y-3">
-                <input type="url" id="linkInput" placeholder="Link da Nota Fiscal (https://...)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <input type="text" id="obsInput" placeholder="Observações internas (não aparece no PDF)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <input type="url" id="linkInput" placeholder="Link da Nota Fiscal (https://...)"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <input type="text" id="obsInput" placeholder="Observações internas (não aparece no PDF)"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
         </div>
 
@@ -180,30 +241,39 @@
             <div class="flex flex-col md:flex-row gap-4">
                 <div class="flex-1 flex items-center gap-2">
                     <span class="text-gray-400">🔍</span>
-                    <input type="text" id="searchInput" placeholder="Buscar por nome..." class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
-                    <button onclick="app.clearSearch()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
+                    <input type="text" id="searchInput" placeholder="Buscar por nome..."
+                        class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
+                    <button onclick="app.clearSearch()"
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
                 </div>
                 <div class="w-px bg-gray-300 hidden md:block"></div>
                 <div class="flex-1 flex items-center gap-2">
                     <span class="text-gray-400">📦</span>
-                    <input type="text" id="productSearchInput" placeholder="Buscar por produto..." class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
-                    <button onclick="app.clearProductSearch()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
+                    <input type="text" id="productSearchInput" placeholder="Buscar por produto..."
+                        class="flex-1 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
+                    <button onclick="app.clearProductSearch()"
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-600 text-xs px-3 py-2 rounded transition-colors">✕</button>
                 </div>
                 <div class="w-px bg-gray-300 hidden md:block"></div>
                 <div class="flex gap-1">
-                    <button onclick="app.filterByStatus('all')" class="bg-gray-500 hover:bg-gray-600 text-white text-xs px-3 py-2 rounded transition-colors">Todas</button>
-                    <button onclick="app.filterByStatus('delivered')" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs px-3 py-2 rounded transition-colors">Entregues</button>
-                    <button onclick="app.filterByStatus('pending')" class="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-2 rounded transition-colors">Pendentes</button>
+                    <button onclick="app.filterByStatus('all')"
+                        class="bg-gray-500 hover:bg-gray-600 text-white text-xs px-3 py-2 rounded transition-colors">Todas</button>
+                    <button onclick="app.filterByStatus('delivered')"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs px-3 py-2 rounded transition-colors">Entregues</button>
+                    <button onclick="app.filterByStatus('pending')"
+                        class="bg-amber-500 hover:bg-amber-600 text-white text-xs px-3 py-2 rounded transition-colors">Pendentes</button>
                 </div>
             </div>
         </div>
 
         <!-- List Header -->
-        <div class="bg-white rounded-t-xl shadow-sm border border-gray-200 border-b-0 p-4 flex justify-between items-center">
+        <div
+            class="bg-white rounded-t-xl shadow-sm border border-gray-200 border-b-0 p-4 flex justify-between items-center">
             <h3 id="listTitle" class="text-sm font-bold text-gray-900">Lista de Encomendas (0 total)</h3>
             <div class="flex items-center gap-2">
                 <span class="text-gray-400 text-lg">⇅</span>
-                <select id="ordenacao" onchange="app.refreshOrdersList()" class="bg-white border border-gray-300 text-gray-700 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1.5">
+                <select id="ordenacao" onchange="app.refreshOrdersList()"
+                    class="bg-white border border-gray-300 text-gray-700 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1.5">
                     <option value="recente">Recente → Antiga</option>
                     <option value="antiga">Antiga → Recente</option>
                     <option value="az">Alfabética A-Z</option>
@@ -213,7 +283,8 @@
         </div>
 
         <!-- Orders List -->
-        <div id="ordersList" class="bg-white rounded-b-xl shadow-sm border border-gray-200 max-h-[600px] overflow-y-auto">
+        <div id="ordersList"
+            class="bg-white rounded-b-xl shadow-sm border border-gray-200 max-h-[600px] overflow-y-auto">
             <!-- Orders will be rendered here -->
         </div>
     </div>
@@ -226,20 +297,24 @@
                 <div class="space-y-3">
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">Nº Pedido:</label>
-                        <input type="text" id="editNum" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="text" id="editNum"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">Nome:</label>
-                        <input type="text" id="editName" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="text" id="editName"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">Data Entrega:</label>
-                        <input type="text" id="editDate" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="text" id="editDate"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label class="block text-xs font-medium text-gray-700 mb-1">Mês:</label>
-                            <select id="editMes" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                            <select id="editMes"
+                                class="bg-white border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                                 <option value="Janeiro">Janeiro</option>
                                 <option value="Fevereiro">Fevereiro</option>
                                 <option value="Março">Março</option>
@@ -256,25 +331,32 @@
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-gray-700 mb-1">Ano:</label>
-                            <input type="text" id="editAno" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                            <input type="text" id="editAno"
+                                class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                         </div>
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">Itens (separe por vírgula):</label>
-                        <input type="text" id="editItems" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="text" id="editItems"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">🔗 Link NF:</label>
-                        <input type="url" id="editLink" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="url" id="editLink"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-gray-700 mb-1">📝 Observações:</label>
-                        <input type="text" id="editObs" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                        <input type="text" id="editObs"
+                            class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                     </div>
                 </div>
                 <div class="flex gap-3 mt-6">
-                    <button onclick="app.saveEdit()" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Salvar Alterações</button>
-                    <button onclick="app.closeEditModal()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Cancelar</button>
+                    <button onclick="app.saveEdit()"
+                        class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Salvar
+                        Alterações</button>
+                    <button onclick="app.closeEditModal()"
+                        class="flex-1 bg-gray-500 hover:bg-gray-600 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -346,7 +428,7 @@
 
             async loadData() {
                 const statusEl = document.getElementById('syncStatus');
-                
+
                 // Tenta carregar do localStorage primeiro (persistência do usuário)
                 const saved = localStorage.getItem('arteVivaOrders');
                 if (saved) {
@@ -366,26 +448,26 @@
                 try {
                     const response = await fetch('./encomendas_data.json', { cache: 'no-store' });
                     if (!response.ok) throw new Error('Arquivo não encontrado');
-                    
+
                     const jsonData = await response.json();
-                    
+
                     // Se tem dados no JSON e não tem no localStorage, usa o JSON
                     // Se tem dados nos dois, mescla (prioriza localStorage)
                     if (!saved || this.dataModified === false) {
                         this.orders = jsonData;
                         this.saveToLocalStorage();
                     }
-                    
+
                     statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-green-600 bg-green-50 px-3 py-1.5 rounded-full";
                     statusEl.innerHTML = `<span class="w-2 h-2 bg-green-500 rounded-full status-dot"></span> Sincronizado (JSON)`;
                     this.refreshOrdersList();
-                    
+
                 } catch (e) {
                     console.error("Erro ao carregar JSON:", e);
                     // Se falhar tudo, inicia vazio
                     this.orders = [];
                     this.refreshOrdersList();
-                    
+
                     statusEl.className = "flex items-center gap-1.5 text-xs font-medium text-red-600 bg-red-50 px-3 py-1.5 rounded-full";
                     statusEl.innerHTML = `<span class="w-2 h-2 bg-red-500 rounded-full"></span> Modo Offline (Sem dados)`;
                 }
@@ -402,7 +484,7 @@
                 const now = new Date().toLocaleTimeString();
                 const status = this.dataModified ? "Modificações pendentes" : "Sincronizado";
                 const cor = this.dataModified ? "text-amber-600 bg-amber-50" : "text-green-600 bg-green-50";
-                
+
                 document.getElementById('syncStatus').innerHTML = `
                     <span class="w-2 h-2 bg-current rounded-full status-dot"></span>
                     ${status} às ${now}
@@ -482,7 +564,7 @@
                 if (this.mesSelecionado === "Todos") {
                     return this.orders.filter(o => (o.ano || '2026') === anoFiltro);
                 } else {
-                    return this.orders.filter(o => 
+                    return this.orders.filter(o =>
                         o.mes === this.mesSelecionado && (o.ano || '2026') === anoFiltro
                     );
                 }
@@ -492,7 +574,7 @@
                 if (!pedidos) return pedidos;
                 const ordenados = [...pedidos];
 
-                switch(this.ordenacaoAtual) {
+                switch (this.ordenacaoAtual) {
                     case 'recente':
                         ordenados.sort((a, b) => b.id - a.id);
                         break;
@@ -530,7 +612,7 @@
 
                 const baseList = this.getOrdersByMonth();
                 if (term) {
-                    this.filteredOrders = baseList.filter(o => 
+                    this.filteredOrders = baseList.filter(o =>
                         o.items.some(i => i.toUpperCase().includes(this.currentProductSearch))
                     );
                 } else {
@@ -560,7 +642,7 @@
                 if (this.currentSearchTerm) {
                     baseList = baseList.filter(o => o.name.toUpperCase().includes(this.currentSearchTerm));
                 } else if (this.currentProductSearch) {
-                    baseList = baseList.filter(o => 
+                    baseList = baseList.filter(o =>
                         o.items.some(i => i.toUpperCase().includes(this.currentProductSearch))
                     );
                 }
@@ -750,8 +832,8 @@
                                     <p class="text-xs ${itemHighlighted ? 'text-emerald-600 font-medium' : 'text-gray-500'} truncate">
                                         ${itemsText}${hasMoreItems ? ` (+${order.items.length - 3})` : ''}
                                     </p>
-                                    ${this.mesSelecionado === 'Todos' || this.filteredOrders !== null ? 
-                                        `<p class="text-xs text-gray-400 mt-1">${order.mes} ${order.ano || '2026'}</p>` : ''}
+                                    ${this.mesSelecionado === 'Todos' || this.filteredOrders !== null ?
+                            `<p class="text-xs text-gray-400 mt-1">${order.mes} ${order.ano || '2026'}</p>` : ''}
                                 </div>
 
                                 <div class="flex flex-col gap-1">
@@ -828,8 +910,8 @@
                 doc.setTextColor(255, 255, 255);
                 doc.setFontSize(16);
                 doc.setFont('helvetica', 'bold');
-                const titulo = this.mesSelecionado === 'Todos' ? 
-                    `ENCOMENDAS ${anoPDF}` : 
+                const titulo = this.mesSelecionado === 'Todos' ?
+                    `ENCOMENDAS ${anoPDF}` :
                     `ENCOMENDAS - ${this.mesSelecionado.toUpperCase()} ${anoPDF}`;
                 doc.text(titulo, 105, 15, { align: 'center' });
 
@@ -921,14 +1003,21 @@
                         doc.text(`+ ${order.items.length - 2} itens`, cardX + 3, itemY);
                     }
 
+
                     // Delivered badge
+                    // Delivered badge (Posicionado à direita)
                     if (order.delivered) {
+                        const badgeWidth = 15;
+                        const badgeX = cardX + cardWidth - badgeWidth - 3; // 3 é a margem da borda direita
+
                         doc.setFillColor(220, 252, 231);
-                        doc.roundedRect(cardX + 3, cardY + cardHeight - 10, 15, 6, 3, 3, 'F');
+                        doc.roundedRect(badgeX, cardY + cardHeight - 10, badgeWidth, 6, 3, 3, 'F');
+
                         doc.setTextColor(22, 101, 52);
                         doc.setFont('helvetica', 'bold');
                         doc.setFontSize(6);
-                        doc.text('✓ OK', cardX + 10, cardY + cardHeight - 6, { align: 'center' });
+                        // O texto precisa ser centralizado no meio do NOVO badgeX
+                        doc.text('✓ OK', badgeX + (badgeWidth / 2), cardY + cardHeight - 6, { align: 'center' });
                     }
 
                     count++;
@@ -965,4 +1054,5 @@
         });
     </script>
 </body>
+
 </html>

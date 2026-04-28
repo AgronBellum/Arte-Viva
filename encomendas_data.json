@@ -331,7 +331,7 @@
     "items": [
       "Morar no Interior"
     ],
-    "delivered": false,
+    "delivered": true,
     "mes": "Abril",
     "ano": "2026"
   },

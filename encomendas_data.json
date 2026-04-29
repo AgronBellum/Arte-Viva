@@ -531,7 +531,7 @@
     "items": [
       "Casa Azul"
     ],
-    "delivered": false,
+    "delivered": true,
     "mes": "Abril",
     "ano": "2026"
   },

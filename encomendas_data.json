@@ -455,7 +455,7 @@
     "items": [
       "Filtro Café"
     ],
-    "delivered": false,
+    "delivered": true,
     "mes": "Abril",
     "ano": "2026"
   },

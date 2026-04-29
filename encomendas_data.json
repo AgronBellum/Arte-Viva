@@ -640,7 +640,7 @@
     "items": [
       "Casa Amarela"
     ],
-    "delivered": false,
+    "delivered": true,
     "mes": "Abril",
     "ano": "2026",
     "link_nf": "https://seller.shopee.com.br/awbprint?job_id=SDK0001_a7921cb7d43eda87229230ca001fc358&shop_id=487269867&lang=pt-br&first_time=0",

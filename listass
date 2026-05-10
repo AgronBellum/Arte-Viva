@@ -1,0 +1,586 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="aparecida" tvg-name="Aparecida" tvg-url="https://epg.pw/api/epg.json?channel_id=523345" group-title="TV Aberta e Notícias",Aparecida
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/aparecida.m3u8
+#EXTINF:-1 tvg-id="bandnews" tvg-name="Band News" tvg-url="https://epg.pw/api/epg.json?channel_id=523315" group-title="TV Aberta e Notícias",Band News
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/bandnews.m3u8
+#EXTINF:-1 tvg-id="bandrj" tvg-name="Band RJ" tvg-url="https://epg.pw/api/epg.json?channel_id=523315" group-title="TV Aberta e Notícias",Band RJ
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/bandrj.m3u8
+#EXTINF:-1 tvg-id="bandsp" tvg-name="Band SP" tvg-url="https://epg.pw/api/epg.json?channel_id=523314" group-title="TV Aberta e Notícias",Band SP
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/bandsp.m3u8
+#EXTINF:-1 tvg-id="cnnbrasil" tvg-name="CNN Brasil" tvg-url="https://epg.pw/api/epg.json?channel_id=426108" group-title="TV Aberta e Notícias",CNN Brasil
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/cnnbrasil.m3u8
+#EXTINF:-1 tvg-id="cultura" tvg-name="Cultura" tvg-url="https://epg.pw/api/epg.json?channel_id=523305" group-title="TV Aberta e Notícias",Cultura
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/cultura.m3u8
+#EXTINF:-1 tvg-id="globoam" tvg-name="Globo AM" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo AM
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globoam.m3u8
+#EXTINF:-1 tvg-id="globoce" tvg-name="Globo CE" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo CE
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globoce.m3u8
+#EXTINF:-1 tvg-id="globoes" tvg-name="Globo ES" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo ES
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globoes.m3u8
+#EXTINF:-1 tvg-id="globomg" tvg-name="Globo MG" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo MG
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globomg.m3u8
+#EXTINF:-1 tvg-id="globonews" tvg-name="Globo News" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo News
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globonews.m3u8
+#EXTINF:-1 tvg-id="globopb" tvg-name="Globo PB" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo PB
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globopb.m3u8
+#EXTINF:-1 tvg-id="globope" tvg-name="Globo PE" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo PE
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globope.m3u8
+#EXTINF:-1 tvg-id="globorj" tvg-name="Globo RJ" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo RJ
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globorj.m3u8
+#EXTINF:-1 tvg-id="globors" tvg-name="Globo RS" tvg-url="https://raw.githubusercontent.com/AgronBellum/test_cachorro/refs/heads/main/RS_BR.json" group-title="TV Aberta e Notícias",Globo RS
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globors.m3u8
+#EXTINF:-1 tvg-id="globosp" tvg-name="Globo SP" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo SP
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globosp.m3u8
+#EXTINF:-1 tvg-id="globonovelas" tvg-name="Globo Novelas" tvg-url="https://epg.pw/api/epg.json?channel_id=523353" group-title="TV Aberta e Notícias",Globo Novelas
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/globonovelas.m3u8
+#EXTINF:-1 tvg-id="mtv" tvg-name="MTV" tvg-url="https://epg.pw/api/epg.json?channel_id=523308" group-title="TV Aberta e Notícias",MTV
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/mtv.m3u8
+#EXTINF:-1 tvg-id="multishow" tvg-name="Multishow" tvg-url="https://epg.pw/api/epg.json?channel_id=523321" group-title="TV Aberta e Notícias",Multishow
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/multishow.m3u8
+#EXTINF:-1 tvg-id="recordmg" tvg-name="Record MG" tvg-url="https://epg.pw/api/epg.json?channel_id=523352" group-title="TV Aberta e Notícias",Record MG
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/recordmg.m3u8
+#EXTINF:-1 tvg-id="recordrj" tvg-name="Record RJ" tvg-url="https://epg.pw/api/epg.json?channel_id=523282" group-title="TV Aberta e Notícias",Record RJ
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/recordrj.m3u8
+#EXTINF:-1 tvg-id="recordsp" tvg-name="Record SP" tvg-url="https://epg.pw/api/epg.json?channel_id=426071" group-title="TV Aberta e Notícias",Record SP
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/recordsp.m3u8
+#EXTINF:-1 tvg-id="sbtrj" tvg-name="SBT RJ" tvg-url="https://epg.pw/api/epg.json?channel_id=523298" group-title="TV Aberta e Notícias",SBT RJ
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sbtrj.m3u8
+#EXTINF:-1 tvg-id="sbtsp" tvg-name="SBT SP" tvg-url="https://epg.pw/api/epg.json?channel_id=523298" group-title="TV Aberta e Notícias",SBT SP
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sbtsp.m3u8
+#EXTINF:-1 tvg-id="bandsports" tvg-name="Band Sports" tvg-url="https://epg.pw/api/epg.json?channel_id=523330" group-title="Esportes",Band Sports
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/bandsports.m3u8
+#EXTINF:-1 tvg-id="caze1" tvg-name="CazeTV 1" group-title="Esportes",CazeTV 1
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/caze1.m3u8
+#EXTINF:-1 tvg-id="caze2" tvg-name="CazeTV 2" group-title="Esportes",CazeTV 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/caze2.m3u8
+#EXTINF:-1 tvg-id="combate" tvg-name="Combate" tvg-url="https://epg.pw/api/epg.json?channel_id=523284" group-title="Esportes",Combate
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/combate.m3u8
+#EXTINF:-1 tvg-id="disneyplus1" tvg-name="Disney Plus 1" group-title="Esportes",Disney Plus 1
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/disneyplus1.m3u8
+#EXTINF:-1 tvg-id="disneyplus2" tvg-name="Disney Plus 2" group-title="Esportes",Disney Plus 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/disneyplus2.m3u8
+#EXTINF:-1 tvg-id="disneyplus3" tvg-name="Disney Plus 3" group-title="Esportes",Disney Plus 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/disneyplus3.m3u8
+#EXTINF:-1 tvg-id="espn" tvg-name="Espn" tvg-url="https://epg.pw/api/epg.json?channel_id=418725" group-title="Esportes",Espn
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn.m3u8
+#EXTINF:-1 tvg-id="espn2" tvg-name="Espn 2" tvg-url="https://epg.pw/api/epg.json?channel_id=418722" group-title="Esportes",Espn 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn2.m3u8
+#EXTINF:-1 tvg-id="espn3" tvg-name="Espn 3" tvg-url="https://epg.pw/api/epg.json?channel_id=523329" group-title="Esportes",Espn 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn3.m3u8
+#EXTINF:-1 tvg-id="espn4" tvg-name="Espn 4" tvg-url="https://epg.pw/api/epg.json?channel_id=523357" group-title="Esportes",Espn 4
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn4.m3u8
+#EXTINF:-1 tvg-id="espn5" tvg-name="Espn 5" tvg-url="https://epg.pw/api/epg.json?channel_id=418724" group-title="Esportes",Espn 5
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn5.m3u8
+#EXTINF:-1 tvg-id="espn6" tvg-name="Espn 6" tvg-url="https://epg.pw/api/epg.json?channel_id=417391" group-title="Esportes",Espn 6
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/espn6.m3u8
+#EXTINF:-1 tvg-id="max1" tvg-name="Max - 1" group-title="Esportes",Max - 1
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/max1.m3u8
+#EXTINF:-1 tvg-id="max2" tvg-name="Max - 2" group-title="Esportes",Max - 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/max2.m3u8
+#EXTINF:-1 tvg-id="max3" tvg-name="Max - 3" group-title="Esportes",Max - 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/max3.m3u8
+#EXTINF:-1 tvg-id="paramountplus" tvg-name="Paramount Plus" tvg-url="https://epg.pw/api/epg.json?channel_id=523275" group-title="Esportes",Paramount Plus
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/paramountplus.m3u8
+#EXTINF:-1 tvg-id="paramountplus2" tvg-name="Paramount Plus 2" tvg-url="https://epg.pw/api/epg.json?channel_id=523275" group-title="Esportes",Paramount Plus 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/paramountplus2.m3u8
+#EXTINF:-1 tvg-id="premiere" tvg-name="Premiere 1" tvg-url="https://epg.pw/api/epg.json?channel_id=523267" group-title="Esportes",Premiere 1
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere.m3u8
+#EXTINF:-1 tvg-id="premiere2" tvg-name="Premiere 2" tvg-url="https://epg.pw/api/epg.json?channel_id=425970" group-title="Esportes",Premiere 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere2.m3u8
+#EXTINF:-1 tvg-id="premiere3" tvg-name="Premiere 3" tvg-url="https://epg.pw/api/epg.json?channel_id=425997" group-title="Esportes",Premiere 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere3.m3u8
+#EXTINF:-1 tvg-id="premiere4" tvg-name="Premiere 4" tvg-url="https://epg.pw/api/epg.json?channel_id=426174" group-title="Esportes",Premiere 4
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere4.m3u8
+#EXTINF:-1 tvg-id="premiere5" tvg-name="Premiere 5" tvg-url="https://epg.pw/api/epg.json?channel_id=425985" group-title="Esportes",Premiere 5
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere5.m3u8
+#EXTINF:-1 tvg-id="premiere6" tvg-name="Premiere 6" tvg-url="https://epg.pw/api/epg.json?channel_id=426171" group-title="Esportes",Premiere 6
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere6.m3u8
+#EXTINF:-1 tvg-id="premiere7" tvg-name="Premiere 7" tvg-url="https://epg.pw/api/epg.json?channel_id=425984" group-title="Esportes",Premiere 7
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere7.m3u8
+#EXTINF:-1 tvg-id="premiere8" tvg-name="Premiere 8" tvg-url="https://epg.pw/api/epg.json?channel_id=425984" group-title="Esportes",Premiere 8
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/premiere8.m3u8
+#EXTINF:-1 tvg-id="primevideo" tvg-name="Prime Video" group-title="Esportes",Prime Video
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/primevideo.m3u8
+#EXTINF:-1 tvg-id="primevideo2" tvg-name="Prime Video 2" group-title="Esportes",Prime Video 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/primevideo2.m3u8
+#EXTINF:-1 tvg-id="sportv" tvg-name="Sportv" tvg-url="https://epg.pw/api/epg.json?channel_id=523330" group-title="Esportes",Sportv
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sportv.m3u8
+#EXTINF:-1 tvg-id="sportv2" tvg-name="Sportv 2" tvg-url="https://epg.pw/api/epg.json?channel_id=523358" group-title="Esportes",Sportv 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sportv2.m3u8
+#EXTINF:-1 tvg-id="sportv3" tvg-name="Sportv 3" tvg-url="https://epg.pw/api/epg.json?channel_id=523358" group-title="Esportes",Sportv 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sportv3.m3u8
+#EXTINF:-1 tvg-id="sportv4" tvg-name="Sportv 4" tvg-url="https://epg.pw/api/epg.json?channel_id=523358" group-title="Esportes",Sportv 4
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sportv4.m3u8
+#EXTINF:-1 tvg-id="ufcfightpass" tvg-name="UFC Fight Pass" group-title="Esportes",UFC Fight Pass
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/ufcfightpass.m3u8
+#EXTINF:-1 tvg-id="xsports" tvg-name="XSports" tvg-url="https://epg.pw/api/epg.json?channel_id=523358" group-title="Esportes",XSports
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/xsports.m3u8
+#EXTINF:-1 tvg-id="ae" tvg-name="AE" tvg-url="https://epg.pw/api/epg.json?channel_id=523311" group-title="Filmes e Séries",AE
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/ae.m3u8
+#EXTINF:-1 tvg-id="amc" tvg-name="AMC" tvg-url="https://epg.pw/api/epg.json?channel_id=523312" group-title="Filmes e Séries",AMC
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/amc.m3u8
+#EXTINF:-1 tvg-id="axn" tvg-name="AXN" tvg-url="https://epg.pw/api/epg.json?channel_id=523313" group-title="Filmes e Séries",AXN
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/axn.m3u8
+#EXTINF:-1 tvg-id="adultswim" tvg-name="Adult Swim" tvg-url="https://epg.pw/api/epg.json?channel_id=417185" group-title="Filmes e Séries",Adult Swim
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/adultswim.m3u8
+#EXTINF:-1 tvg-id="cinemax" tvg-name="Cinemax" tvg-url="https://epg.pw/api/epg.json?channel_id=523277" group-title="Filmes e Séries",Cinemax
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/cinemax.m3u8
+#EXTINF:-1 tvg-id="gnt" tvg-name="GNT" tvg-url="https://epg.pw/api/epg.json?channel_id=523276" group-title="Filmes e Séries",GNT
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/gnt.m3u8
+#EXTINF:-1 tvg-id="hbo" tvg-name="HBO" tvg-url="https://epg.pw/api/epg.json?channel_id=418723" group-title="Filmes e Séries",HBO
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hbo.m3u8
+#EXTINF:-1 tvg-id="hbo2" tvg-name="HBO 2" tvg-url="https://epg.pw/api/epg.json?channel_id=523348" group-title="Filmes e Séries",HBO 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hbo2.m3u8
+#EXTINF:-1 tvg-id="hbofamily" tvg-name="HBO Family" tvg-url="https://epg.pw/api/epg.json?channel_id=523290" group-title="Filmes e Séries",HBO Family
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hbofamily.m3u8
+#EXTINF:-1 tvg-id="hbomundi" tvg-name="HBO Mundi" tvg-url="https://epg.pw/api/epg.json?channel_id=418723" group-title="Filmes e Séries",HBO Mundi
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hbomundi.m3u8
+#EXTINF:-1 tvg-id="hbopop" tvg-name="HBO POP" tvg-url="https://epg.pw/api/epg.json?channel_id=523348" group-title="Filmes e Séries",HBO POP
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hbopop.m3u8
+#EXTINF:-1 tvg-id="hboplus" tvg-name="HBO Plus" tvg-url="https://epg.pw/api/epg.json?channel_id=523328" group-title="Filmes e Séries",HBO Plus
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hboplus.m3u8
+#EXTINF:-1 tvg-id="hboxtreme" tvg-name="HBO Xtreme" group-title="Filmes e Séries",HBO Xtreme
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hboxtreme.m3u8
+#EXTINF:-1 tvg-id="hgtv" tvg-name="HGTV" group-title="Filmes e Séries",HGTV
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/hgtv.m3u8
+#EXTINF:-1 tvg-id="megapix" tvg-name="Megapix" tvg-url="https://epg.pw/api/epg.json?channel_id=523293" group-title="Filmes e Séries",Megapix
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/megapix.m3u8
+#EXTINF:-1 tvg-id="off" tvg-name="OFF" tvg-url="https://epg.pw/api/epg.json?channel_id=523285" group-title="Filmes e Séries",OFF
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/off.m3u8
+#EXTINF:-1 tvg-id="sonychannel" tvg-name="Sony Channel" tvg-url="https://epg.pw/api/epg.json?channel_id=523333" group-title="Filmes e Séries",Sony Channel
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sonychannel.m3u8
+#EXTINF:-1 tvg-id="space" tvg-name="Space" tvg-url="https://epg.pw/api/epg.json?channel_id=523347" group-title="Filmes e Séries",Space
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/space.m3u8
+#EXTINF:-1 tvg-id="studiouniversal" tvg-name="Studio Universal" tvg-url="https://epg.pw/api/epg.json?channel_id=523320" group-title="Filmes e Séries",Studio Universal
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/studiouniversal.m3u8
+#EXTINF:-1 tvg-id="tcm" tvg-name="TCM" tvg-url="https://epg.pw/api/epg.json?channel_id=523316" group-title="Filmes e Séries",TCM
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/tcm.m3u8
+#EXTINF:-1 tvg-id="tlc" tvg-name="TLC" tvg-url="https://epg.pw/api/epg.json?channel_id=523307" group-title="Filmes e Séries",TLC
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/tlc.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" tvg-url="https://epg.pw/api/epg.json?channel_id=523279" group-title="Filmes e Séries",TNT
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/tnt.m3u8
+#EXTINF:-1 tvg-id="tntnovelas" tvg-name="TNT Novelas" tvg-url="https://epg.pw/api/epg.json?channel_id=523279" group-title="Filmes e Séries",TNT Novelas
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/tntnovelas.m3u8
+#EXTINF:-1 tvg-id="tntseries" tvg-name="TNT Series" tvg-url="https://epg.pw/api/epg.json?channel_id=523294" group-title="Filmes e Séries",TNT Series
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/tntseries.m3u8
+#EXTINF:-1 tvg-id="telecineaction" tvg-name="Telecine Action" tvg-url="https://epg.pw/api/epg.json?channel_id=523346" group-title="Filmes e Séries",Telecine Action
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecineaction.m3u8
+#EXTINF:-1 tvg-id="telecinecult" tvg-name="Telecine Cult" tvg-url="https://epg.pw/api/epg.json?channel_id=523286" group-title="Filmes e Séries",Telecine Cult
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecinecult.m3u8
+#EXTINF:-1 tvg-id="telecinefun" tvg-name="Telecine Fun" tvg-url="https://epg.pw/api/epg.json?channel_id=523288" group-title="Filmes e Séries",Telecine Fun
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecinefun.m3u8
+#EXTINF:-1 tvg-id="telecinepipoca" tvg-name="Telecine Pipoca" tvg-url="https://epg.pw/api/epg.json?channel_id=523291" group-title="Filmes e Séries",Telecine Pipoca
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecinepipoca.m3u8
+#EXTINF:-1 tvg-id="telecinepremium" tvg-name="Telecine Premium" tvg-url="https://epg.pw/api/epg.json?channel_id=523351" group-title="Filmes e Séries",Telecine Premium
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecinepremium.m3u8
+#EXTINF:-1 tvg-id="telecinetouch" tvg-name="Telecine Touch" tvg-url="https://epg.pw/api/epg.json?channel_id=523306" group-title="Filmes e Séries",Telecine Touch
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/telecinetouch.m3u8
+#EXTINF:-1 tvg-id="universaltv" tvg-name="Universal" tvg-url="https://epg.pw/api/epg.json?channel_id=523349" group-title="Filmes e Séries",Universal
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/universaltv.m3u8
+#EXTINF:-1 tvg-id="warnerchannel" tvg-name="Warnerchannel" tvg-url="https://epg.pw/api/epg.json?channel_id=523350" group-title="Filmes e Séries",Warnerchannel
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/warnerchannel.m3u8
+#EXTINF:-1 tvg-id="animalplanet" tvg-name="Animal Planet" tvg-url="https://epg.pw/api/epg.json?channel_id=523297" group-title="Documentários",Animal Planet
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/animalplanet.m3u8
+#EXTINF:-1 tvg-id="discoverychannel" tvg-name="Discovery Channel" tvg-url="https://epg.pw/api/epg.json?channel_id=523309" group-title="Documentários",Discovery Channel
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoverychannel.m3u8
+#EXTINF:-1 tvg-id="discoveryhh" tvg-name="Discovery H&H" tvg-url="https://epg.pw/api/epg.json?channel_id=523310" group-title="Documentários",Discovery H&H
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoveryhh.m3u8
+#EXTINF:-1 tvg-id="discoveryid" tvg-name="Discovery ID" tvg-url="https://raw.githubusercontent.com/AgronBellum/test_cachorro/refs/heads/main/ID_BR.json" group-title="Documentários",Discovery ID
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoveryid.m3u8
+#EXTINF:-1 tvg-id="discoveryscience" tvg-name="Discovery Science" tvg-url="https://epg.pw/api/epg.json?channel_id=523359" group-title="Documentários",Discovery Science
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoveryscience.m3u8
+#EXTINF:-1 tvg-id="discoverytheather" tvg-name="Discovery Theater" tvg-url="https://epg.pw/api/epg.json?channel_id=523292" group-title="Documentários",Discovery Theater
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoverytheather.m3u8
+#EXTINF:-1 tvg-id="discoveryturbo" tvg-name="Discovery Turbo" tvg-url="https://epg.pw/api/epg.json?channel_id=523326" group-title="Documentários",Discovery Turbo
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoveryturbo.m3u8
+#EXTINF:-1 tvg-id="discoveryworld" tvg-name="Discovery World" tvg-url="https://epg.pw/api/epg.json?channel_id=523309" group-title="Documentários",Discovery World
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoveryworld.m3u8
+#EXTINF:-1 tvg-id="history" tvg-name="History" tvg-url="https://epg.pw/api/epg.json?channel_id=523342" group-title="Documentários",History
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/history.m3u8
+#EXTINF:-1 tvg-id="history2" tvg-name="History 2" tvg-url="https://epg.pw/api/epg.json?channel_id=523342" group-title="Documentários",History 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/history2.m3u8
+#EXTINF:-1 tvg-id="24h_chaves" tvg-name="24H Chaves" group-title="Desenhos e Infantil",24H Chaves
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/24h_chaves.m3u8
+#EXTINF:-1 tvg-id="24h_dragonball" tvg-name="24H Dragon Ball Z" group-title="Desenhos e Infantil",24H Dragon Ball Z
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/24h_dragonball.m3u8
+#EXTINF:-1 tvg-id="24h_naruto" tvg-name="24H Naruto Clássico" group-title="Desenhos e Infantil",24H Naruto Clássico
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/24h_naruto.m3u8
+#EXTINF:-1 tvg-id="24h_simpsons" tvg-name="24H Os Simpsons" group-title="Desenhos e Infantil",24H Os Simpsons
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/24h_simpsons.m3u8
+#EXTINF:-1 tvg-id="24h_odeiachris" tvg-name="24H Todo Mundo Odeia o Cris" group-title="Desenhos e Infantil",24H Todo Mundo Odeia o Cris
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/24h_odeiachris.m3u8
+#EXTINF:-1 tvg-id="cartoonito" tvg-name="Cartoonito" tvg-url="https://epg.pw/api/epg.json?channel_id=523325" group-title="Desenhos e Infantil",Cartoonito
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/cartoonito.m3u8
+#EXTINF:-1 tvg-id="cartoonnetwork" tvg-name="Cartoon Network" tvg-url="https://epg.pw/api/epg.json?channel_id=523325" group-title="Desenhos e Infantil",Cartoon Network
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/cartoonnetwork.m3u8
+#EXTINF:-1 tvg-id="discoverykids" tvg-name="Discovery Kids" tvg-url="https://epg.pw/api/epg.json?channel_id=523318" group-title="Desenhos e Infantil",Discovery Kids
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/discoverykids.m3u8
+#EXTINF:-1 tvg-id="gloob" tvg-name="Gloob" tvg-url="https://epg.pw/api/epg.json?channel_id=523336" group-title="Desenhos e Infantil",Gloob
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/gloob.m3u8
+#EXTINF:-1 tvg-id="foodnetwork" tvg-name="Food Network" tvg-url="https://epg.pw/api/epg.json?channel_id=417387" group-title="Receitas e Culinária",Food Network
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/foodnetwork.m3u8
+#EXTINF:-1 tvg-id="acasadopatrao1" tvg-name="A Casa do Patrão - 1" group-title="A Casa do Patrão",A Casa do Patrão - 1
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/acasadopatrao1.m3u8
+#EXTINF:-1 tvg-id="acasadopatrao2" tvg-name="A Casa do Patrão - 2" group-title="A Casa do Patrão",A Casa do Patrão - 2
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/acasadopatrao2.m3u8
+#EXTINF:-1 tvg-id="acasadopatrao3" tvg-name="A Casa do Patrão - 3" group-title="A Casa do Patrão",A Casa do Patrão - 3
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/acasadopatrao3.m3u8
+#EXTINF:-1 tvg-id="acasadopatrao4" tvg-name="A Casa do Patrão - 4" group-title="A Casa do Patrão",A Casa do Patrão - 4
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/acasadopatrao4.m3u8
+#EXTINF:-1 tvg-id="acasadopatrao5" tvg-name="A Casa do Patrão - 5" group-title="A Casa do Patrão",A Casa do Patrão - 5
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/acasadopatrao5.m3u8
+#EXTINF:-1 tvg-id="playboy" tvg-name="Play Boy" group-title="Adulto",Play Boy
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/playboy.m3u8
+#EXTINF:-1 tvg-id="sexyhot" tvg-name="Sexy Hot" group-title="Adulto",Sexy Hot
+#EXTVLCOPT:http-referrer=https://www4.embedtv.cv/
+#EXTVLCOPT:http-origin=https://www4.embedtv.cv/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123 Safari/537.36
+http://megaflix.cloudfronte.lat/zzzstream/sexyhot.m3u8
